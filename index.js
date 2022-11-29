@@ -61,8 +61,9 @@ Aşağıdakileri yapın:
    3. a ve b'yi çarpıp, sonucu dönün
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function carpma(a, b){
+  let carpmaSonucu = a*b;
+  return carpmaSonucu;
 }
 
 
@@ -77,8 +78,9 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function kopeginYasi(insanYili){
+  let kopekYili = insanYili*7;
+  return kopekYili;
 }
 
 
@@ -105,7 +107,38 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 */
 
 function oyun(oyuncu, bilgisayar){
-  /*buraya kodunu yazabilirsin*/
+  if ((oyuncu==="Taş"||oyuncu==="Kağıt"||oyuncu==="Makas")&&(bilgisayar==="Taş"||bilgisayar==="Kağıt"||bilgisayar==="Makas")){
+      if(oyuncu===bilgisayar){
+        let sonuc = "Beraberlik";
+        return sonuc;
+        
+      }else if((oyuncu==="Taş"&&bilgisayar==="Makas")||(oyuncu==="Kağıt"&&bilgisayar==="Taş")||(oyuncu==="Makas"&&bilgisayar==="Kağıt")){
+        let sonuc = "Kazandın!";
+        return sonuc;
+        
+      }else{
+        let sonuc = "Kaybettin!";
+        return sonuc;
+       
+      }
+  } else {
+    console.log("Yazım kuralına uymadığı için teste devam edemezsin");
+  }
+}
+
+let bilgisayar = bilgisayarSecimi();
+
+function bilgisayarSecimi(){
+  let bilgisayarDurumu;
+  let bilgisayarRandom = Math.ceil(Math.random()*3);
+    if (bilgisayarRandom===1){
+     bilgisayarDurumu = "Taş";
+    } else if(bilgisayarRandom===2){
+     bilgisayarDurumu = "Kağıt";
+    } else{
+      bilgisayarDurumu = "Makas";
+    }
+  return bilgisayarDurumu;
 }
 
 
@@ -120,8 +153,10 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function milDonusturucu(num1){
+  const milKati = 1.609344497892562
+  let milDegeri = num1/milKati;
+  return milDegeri;
 }
 
 
@@ -134,8 +169,11 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 3. feet değerini geri dönün
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function feetDonusturucu(num2){
+  const feetKati = 1/30.48;
+  let feetDegeri;
+  feetDegeri = num2*feetKati;
+  return feetDegeri;
 }
 
 
@@ -153,8 +191,13 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
+function cocukSarkisi(num3){
+      return num3 + " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!"
+}
+
+for (let i = 5; i>=1; i--){
+    console.log(cocukSarkisi(i));
+
 }
 
 
@@ -173,9 +216,25 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
+function notHesapla(sinavNotu){
+  if (sinavNotu<=100 && sinavNotu>=90){
+    let harfNotu = "A aldın"
+    return harfNotu
+  } else if (sinavNotu<=89 && sinavNotu>=80){
+    let harfNotu = "B aldın"
+    return harfNotu
+  } else if (sinavNotu<=79 && sinavNotu>=70){
+    let harfNotu = "C aldın"
+    return harfNotu
+  } else if (sinavNotu<=69 && sinavNotu>=60){
+    let harfNotu = "D aldın"
+    return harfNotu
+  } else {
+    let harfNotu = "F aldın"
+    return harfNotu 
+  }
 }
+
 
 
 
@@ -191,9 +250,16 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 */
 
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function sesliHarfSayaci(name1) {
+  let sesliHarfSayisi = 0;
+  for (let i = 0; i < name1.length; i++){
+    if (name1.charAt(i)==="a"||name1.charAt(i)==="A"||name1.charAt(i)==="e"||name1.charAt(i)==="E"||name1.charAt(i)==="ı"||name1.charAt(i)==="I"||name1.charAt(i)==="i"||name1.charAt(i)==="İ"||name1.charAt(i)==="o"||name1.charAt(i)==="O"||name1.charAt(i)==="ö"||name1.charAt(i)==="Ö"||name1.charAt(i)==="u"||name1.charAt(i)==="U"||name1.charAt(i)==="ü"||name1.charAt(i)==="Ü"){
+      sesliHarfSayisi = sesliHarfSayisi + 1;
+    }
+  }
+  return sesliHarfSayisi;
 }
+
 
 
 
