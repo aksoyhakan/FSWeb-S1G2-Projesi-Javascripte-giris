@@ -129,9 +129,10 @@ function oyun(oyuncu, bilgisayar){
 let bilgisayar = bilgisayarSecimi();
 
 function bilgisayarSecimi(){
-  let bilgisayarDurumu;
+
   let bilgisayarRandom = Math.ceil(Math.random()*3);
-    if (bilgisayarRandom===1){
+  let bilgisayarDurumu;  
+  if (bilgisayarRandom===1){
      bilgisayarDurumu = "Taş";
     } else if(bilgisayarRandom===2){
      bilgisayarDurumu = "Kağıt";
@@ -140,6 +141,7 @@ function bilgisayarSecimi(){
     }
   return bilgisayarDurumu;
 }
+
 
 
 
@@ -154,10 +156,10 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 */
 
 function milDonusturucu(num1){
-  const milKati = 1.609344497892562
-  let milDegeri = num1/milKati;
+  const milKati = 0.621371
+  let milDegeri = num1*milKati;
   return milDegeri;
-}
+  }
 
 
 
